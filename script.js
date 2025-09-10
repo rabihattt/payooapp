@@ -16,7 +16,7 @@ document.getElementById('loginbtn').addEventListener('click',function(event){
       window.location.href = "main.html";
     }
     else{
-        alert('Login Failed');
+        alert('Invalid Credentials');
     }
 
 })

@@ -69,7 +69,7 @@ document.getElementById('addmoneybtn').addEventListener('click' ,function(event)
 const total = parseInt( document.getElementById('total').innerText);
 // this id is under span tag thats why innertext
 
-if(accno.length<11){
+if(accno.length!==11){
     alert('please enter 11 digit account number');
     return;
 }
@@ -184,3 +184,33 @@ if(paddpin!==1234){
 document.getElementById('total').innerText = newtotal;
 alert('payment successfull');
 })
+
+// function buttoncolorchange (id){
+//     document.getElementById(id).addEventListener('click' ,function(event){
+  
+//     document.getElementById(id).style.backgroundColor = '#DBEAFE'
+
+
+// })
+
+// }
+
+// buttoncolorchange("add-money");
+// buttoncolorchange("cash-out");
+// buttoncolorchange("tran");
+// buttoncolorchange("pay-bill");
+// buttoncolorchange("get-bonus");
+// buttoncolorchange("transfer-money");
+
+var ids = ["add-money", "cash-out", "tran", "pay-bill", "get-bonus", "transfer-money"];
+
+for (var i = 0; i < ids.length; i++) {
+  document.getElementById(ids[i]).addEventListener("click", function(e) {
+    // reset all
+    for (var j = 0; j < ids.length; j++) {
+      document.getElementById(ids[j]).style.backgroundColor = "transparent";
+    }
+    // highlight clicked
+    e.target.style.backgroundColor = "#DBEAFE";
+  });
+}
